@@ -18,6 +18,7 @@
     "type-check": {
       "dependsOn": ["^build"]
     },
+    "check-format": {},
     "clean": {
       "cache": false
     },
