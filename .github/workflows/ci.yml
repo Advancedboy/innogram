@@ -82,16 +82,17 @@ jobs:
       - name: Start application in background
         run: npm run dev -w core_microservice &
 
-      - name: Wait for server and Health Check
+      - name: Health Check Verification
         run: |
-          npx wait-on http://localhost:3000/health --timeout 30000 
+          echo "Waiting for server..."
+          npx wait-on http://localhost:3000/health --timeout 30000
           RESPONSE=$(curl -s http://localhost:3000/health)
           if [[ "$RESPONSE" == *"ok"* ]]; then
-            echo "Health check passed!"
+            echo "Success: Health check passed"
           else
-            echo "Health check failed: $RESPONSE"
+            echo "Error: Health check failed with response: $RESPONSE"
             exit 1
-          fii
+          fi
 
   deploy:
     runs-on: ubuntu-latest
