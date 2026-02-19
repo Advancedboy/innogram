@@ -93,3 +93,12 @@ temp/
 
 # Docker
 .dockerignore
+
+*.d.ts
+*.d.ts.map
+*.js.map
+*.js
+
+.turbo/
+npm-debug.log*
+.eslintcache

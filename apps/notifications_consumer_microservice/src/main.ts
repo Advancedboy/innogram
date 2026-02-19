@@ -17,6 +17,6 @@ async function bootstrap() {
 
   await app.startAllMicroservices();
   await app.listen(port);
-  console.log(`📧 Notifs (NestJS) running on http://localhost:${port}`);
+  console.log(`Notifs (NestJS) running on http://localhost:${port}`);
 }
 bootstrap();
