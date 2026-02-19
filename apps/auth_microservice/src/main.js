@@ -8,9 +8,9 @@ const port = process.env.AUTH_PORT || 3002;
 app.use(cors());
 app.use(express.json());
 app.get('/health', (req, res) => {
-  res.json({ status: 'Auth Service is running' });
+    res.json({ status: 'Auth Service is running' });
 });
 app.listen(port, () => {
-  console.log(`🔐 Auth (Express) running on http://localhost:${port}`);
+    console.log(`🔐 Auth (Express) running on http://localhost:${port}`);
 });
 //# sourceMappingURL=main.js.map
