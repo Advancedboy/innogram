@@ -8,8 +8,9 @@ import {
   Delete,
 } from '@nestjs/common';
 import { PostService } from './post.service';
+import { ROUTES } from '@innogram/shared';
 
-@Controller('post')
+@Controller(ROUTES.POSTS.ROOT)
 export class PostController {
   constructor(private readonly postService: PostService) {}
 

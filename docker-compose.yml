@@ -3,11 +3,11 @@ services:
     image: postgres:15
     container_name: innogram-postgres
     environment:
-      POSTGRES_DB: innogram
-      POSTGRES_USER: innogram_user
-      POSTGRES_PASSWORD: innogram_password
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
@@ -17,7 +17,7 @@ services:
     image: redis:7-alpine
     container_name: innogram-redis
     ports:
-      - "6379:6379"
+      - "${REDIS_PORT}:6379"
     volumes:
       - redis_data:/data
     networks:
@@ -27,11 +27,11 @@ services:
     image: rabbitmq:3-management
     container_name: innogram-rabbitmq
     environment:
-      RABBITMQ_DEFAULT_USER: innogram
-      RABBITMQ_DEFAULT_PASS: innogram_password
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
     ports:
-      - "5672:5672"
-      - "15672:15672"
+      - "${RABBITMQ_PORT_AMQP:-5672}:5672"
+      - "${RABBITMQ_PORT_MGMT}:15672"
     networks:
       - innogram-network
 

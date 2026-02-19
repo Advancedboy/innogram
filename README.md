@@ -29,22 +29,26 @@ innogram/
 ## Quick Start
 
 1. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 2. **Start infrastructure services:**
+
    ```bash
    npm run docker:up
    ```
 
 3. **Set up environment variables:**
+
    ```bash
    cp .env.example .env
    # Edit .env with your configuration
    ```
 
 4. **Run database migrations:**
+
    ```bash
    npm run db:migrate
    ```
@@ -67,24 +71,28 @@ innogram/
 ## Services
 
 ### Core Microservice (Port 3001)
+
 - NestJS API Gateway
 - Main business logic
 - Database operations
 - Real-time features
 
 ### Authentication Microservice (Port 3002)
+
 - Express.js service
 - JWT token management
 - OAuth 2.0 integration
 - Session management
 
 ### Notifications Consumer (Port 3003)
+
 - NestJS service
 - Message processing
 - Email notifications
 - Real-time notifications
 
 ### Client Application (Port 3000)
+
 - Next.js frontend
 - React components
 - User interface

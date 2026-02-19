@@ -8,8 +8,9 @@ import {
   Delete,
 } from '@nestjs/common';
 import { UserService } from './user.service';
+import { ROUTES } from '@innogram/shared';
 
-@Controller('user')
+@Controller(ROUTES.USER.ROOT)
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
